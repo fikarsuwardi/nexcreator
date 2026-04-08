@@ -3,10 +3,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 // Mock the OpenAI client before importing the scoring service
 vi.mock('../services/claude/client', () => ({
   default: {
-    chat: {
-      completions: {
-        create: vi.fn(),
-      },
+    messages: {
+      create: vi.fn(),
     },
   },
   MODEL: 'claude-sonnet-4-6',
@@ -82,26 +80,22 @@ const MOCK_SCORE_RESPONSE = {
 
 function mockStopResponse(text: string, inputTokens = 1200, outputTokens = 400) {
   return {
-    choices: [{ finish_reason: 'stop', message: { content: text, role: 'assistant' } }],
-    usage: { prompt_tokens: inputTokens, completion_tokens: outputTokens },
+    stop_reason: 'end_turn',
+    content: [{ type: 'text', text }],
+    usage: { input_tokens: inputTokens, output_tokens: outputTokens },
   };
 }
 
 function mockToolCallResponse(toolName: string, toolArgs: object, inputTokens = 800, outputTokens = 50) {
   return {
-    choices: [{
-      finish_reason: 'tool_calls',
-      message: {
-        content: null,
-        role: 'assistant',
-        tool_calls: [{
-          id: 'tool-1',
-          type: 'function',
-          function: { name: toolName, arguments: JSON.stringify(toolArgs) },
-        }],
-      },
+    stop_reason: 'tool_use',
+    content: [{
+      type: 'tool_use',
+      id: 'tool-1',
+      name: toolName,
+      input: toolArgs,
     }],
-    usage: { prompt_tokens: inputTokens, completion_tokens: outputTokens },
+    usage: { input_tokens: inputTokens, output_tokens: outputTokens },
   };
 }
 
@@ -114,7 +108,7 @@ describe('ClaudeScoringService', () => {
   });
 
   it('calls Claude and returns structured score', async () => {
-    const mockCreate = vi.mocked(client.chat.completions.create);
+    const mockCreate = vi.mocked(client.messages.create);
     mockCreate.mockResolvedValueOnce(mockStopResponse(JSON.stringify(MOCK_SCORE_RESPONSE)) as never);
 
     const result = await service.scoreCreator(mockCreator);
@@ -130,7 +124,7 @@ describe('ClaudeScoringService', () => {
   });
 
   it('handles tool use loop correctly', async () => {
-    const mockCreate = vi.mocked(client.chat.completions.create);
+    const mockCreate = vi.mocked(client.messages.create);
 
     // First call: Claude requests tool use
     mockCreate.mockResolvedValueOnce(mockToolCallResponse('get_vertical_benchmarks', { vertical: 'FNB' }) as never);
@@ -170,7 +164,7 @@ describe('ClaudeScoringService', () => {
   });
 
   it('extracts JSON from Claude response with markdown wrapping', async () => {
-    const mockCreate = vi.mocked(client.chat.completions.create);
+    const mockCreate = vi.mocked(client.messages.create);
     // Claude sometimes wraps JSON in markdown code blocks
     const markdownWrapped = `Here is the score:\n\`\`\`json\n${JSON.stringify(MOCK_SCORE_RESPONSE)}\n\`\`\``;
 
@@ -180,13 +174,13 @@ describe('ClaudeScoringService', () => {
     expect(result.total_score).toBe(72.5);
   });
 
-  it('sends system prompt as first message', async () => {
-    const mockCreate = vi.mocked(client.chat.completions.create);
+  it('uses cache_control on system prompt', async () => {
+    const mockCreate = vi.mocked(client.messages.create);
     mockCreate.mockResolvedValueOnce(mockStopResponse(JSON.stringify(MOCK_SCORE_RESPONSE)) as never);
 
     await service.scoreCreator(mockCreator);
 
-    const callArgs = mockCreate.mock.calls[0][0] as { messages: Array<{ role: string }> };
-    expect(callArgs.messages[0].role).toBe('system');
+    const callArgs = mockCreate.mock.calls[0][0] as { system: Array<{ cache_control?: unknown }> };
+    expect(callArgs.system?.[0]?.cache_control).toEqual({ type: 'ephemeral' });
   });
 });

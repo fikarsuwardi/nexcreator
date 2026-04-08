@@ -1,3 +1,4 @@
+import type Anthropic from '@anthropic-ai/sdk';
 import client, { MODEL } from './client';
 import type { CreatorWithScore, OutreachMessage } from '@nex/shared';
 
@@ -20,8 +21,6 @@ No pressure at all — just thought you'd want to know the opportunity is there.
 - NEVER mention AI or that this was generated
 - NEVER guarantee specific earnings — use "top creators earn..." or "creators in your area hit..."`;
 
-type Message = { role: 'system' | 'user' | 'assistant'; content: string };
-
 export class ClaudeFollowUpService {
   async generateFollowUp(
     creator: CreatorWithScore,
@@ -35,8 +34,7 @@ export class ClaudeFollowUpService {
     model_used: string;
   }> {
     // Turn 1: Claude analyzes the original message
-    const analysisMessages: Message[] = [
-      { role: 'system', content: FOLLOW_UP_SYSTEM_PROMPT },
+    const analysisMessages: Anthropic.MessageParam[] = [
       {
         role: 'user',
         content: `I need to write a follow-up for a TikTok creator who hasn't responded to our outreach.
@@ -57,16 +55,17 @@ Before writing, briefly analyze:
       },
     ];
 
-    const analysis = await client.chat.completions.create({
+    const analysis = await client.messages.create({
       model: MODEL,
       max_tokens: 512,
+      system: FOLLOW_UP_SYSTEM_PROMPT,
       messages: analysisMessages,
     });
 
-    const analysisText = analysis.choices[0]?.message?.content ?? '';
+    const analysisText = analysis.content.find((b) => b.type === 'text')?.text ?? '';
 
     // Turn 2: Write the follow-up using the analysis
-    const writeMessages: Message[] = [
+    const writeMessages: Anthropic.MessageParam[] = [
       ...analysisMessages,
       { role: 'assistant', content: analysisText },
       {
@@ -85,19 +84,20 @@ Message only, no preamble:`,
       },
     ];
 
-    const followUp = await client.chat.completions.create({
+    const followUp = await client.messages.create({
       model: MODEL,
       max_tokens: 512,
+      system: FOLLOW_UP_SYSTEM_PROMPT,
       messages: writeMessages,
     });
 
-    const body = followUp.choices[0]?.message?.content ?? '';
+    const body = followUp.content.find((b) => b.type === 'text')?.text ?? '';
 
     return {
       body,
       channel: originalMessage.channel,
-      input_tokens: (analysis.usage?.prompt_tokens ?? 0) + (followUp.usage?.prompt_tokens ?? 0),
-      output_tokens: (analysis.usage?.completion_tokens ?? 0) + (followUp.usage?.completion_tokens ?? 0),
+      input_tokens: analysis.usage.input_tokens + followUp.usage.input_tokens,
+      output_tokens: analysis.usage.output_tokens + followUp.usage.output_tokens,
       model_used: MODEL,
     };
   }

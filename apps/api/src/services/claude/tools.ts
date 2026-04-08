@@ -1,57 +1,47 @@
-import type OpenAI from 'openai';
+import type Anthropic from '@anthropic-ai/sdk';
 import { query } from '../../db/connection';
 
-export const SCORING_TOOLS: OpenAI.Chat.ChatCompletionTool[] = [
+export const SCORING_TOOLS: Anthropic.Tool[] = [
   {
-    type: 'function',
-    function: {
-      name: 'get_vertical_benchmarks',
-      description: `Retrieve benchmark statistics for a specific vertical (ACC/FNB/TTD) to calibrate scoring against real Nex creator performance data. Call this BEFORE scoring to get context-appropriate thresholds.`,
-      parameters: {
-        type: 'object',
-        properties: {
-          vertical: {
-            type: 'string',
-            enum: ['ACC', 'FNB', 'TTD'],
-            description: 'The content vertical to get benchmarks for',
-          },
+    name: 'get_vertical_benchmarks',
+    description: `Retrieve benchmark statistics for a specific vertical (ACC/FNB/TTD) to calibrate scoring against real Nex creator performance data. Call this BEFORE scoring to get context-appropriate thresholds.`,
+    input_schema: {
+      type: 'object',
+      properties: {
+        vertical: {
+          type: 'string',
+          enum: ['ACC', 'FNB', 'TTD'],
+          description: 'The content vertical to get benchmarks for',
         },
-        required: ['vertical'],
       },
+      required: ['vertical'],
     },
   },
   {
-    type: 'function',
-    function: {
-      name: 'check_pipeline_status',
-      description: `Check if a creator is already in the recruitment pipeline and at what stage. Prevents duplicate outreach.`,
-      parameters: {
-        type: 'object',
-        properties: {
-          tiktok_handle: { type: 'string', description: 'TikTok handle to check' },
-        },
-        required: ['tiktok_handle'],
+    name: 'check_pipeline_status',
+    description: `Check if a creator is already in the recruitment pipeline and at what stage. Prevents duplicate outreach.`,
+    input_schema: {
+      type: 'object',
+      properties: {
+        tiktok_handle: { type: 'string', description: 'TikTok handle to check' },
       },
+      required: ['tiktok_handle'],
     },
   },
   {
-    type: 'function',
-    function: {
-      name: 'get_similar_creators',
-      description: `Look up top-performing creators in the same vertical and region for comparative scoring context.`,
-      parameters: {
-        type: 'object',
-        properties: {
-          vertical: { type: 'string', enum: ['ACC', 'FNB', 'TTD'] },
-          region: { type: 'string' },
-        },
-        required: ['vertical'],
+    name: 'get_similar_creators',
+    description: `Look up top-performing creators in the same vertical and region for comparative scoring context.`,
+    input_schema: {
+      type: 'object',
+      properties: {
+        vertical: { type: 'string', enum: ['ACC', 'FNB', 'TTD'] },
+        region: { type: 'string' },
       },
+      required: ['vertical'],
     },
   },
 ];
 
-// Hardcoded benchmark data based on the task brief
 const VERTICAL_BENCHMARKS: Record<string, object> = {
   ACC: {
     vertical: 'ACC',

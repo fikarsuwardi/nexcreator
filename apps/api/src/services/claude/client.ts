@@ -1,11 +1,10 @@
-import OpenAI from 'openai';
+import Anthropic from '@anthropic-ai/sdk';
 
-const client = new OpenAI({
+const client = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
-  baseURL: process.env.ANTHROPIC_BASE_URL ?? 'https://api.anthropic.com/v1',
   maxRetries: 5,
   timeout: 60000,
 });
 
 export default client;
-export const MODEL = 'claude-haiku-4-5';
+export const MODEL = 'claude-sonnet-4-6';

@@ -1,3 +1,4 @@
+import type Anthropic from '@anthropic-ai/sdk';
 import type { Response } from 'express';
 import client, { MODEL } from './client';
 import * as outreachDb from '../../db/queries/outreach';
@@ -127,8 +128,7 @@ export class ClaudeOutreachService {
     );
 
     const userPrompt = buildOutreachPrompt(creator, score, channel, tone, language);
-    const conversationHistory: Array<{ role: string; content: string }> = [
-      { role: 'system', content: OUTREACH_SYSTEM_PROMPT },
+    const conversationHistory: Anthropic.MessageParam[] = [
       { role: 'user', content: userPrompt },
     ];
 
@@ -136,22 +136,24 @@ export class ClaudeOutreachService {
     let inputTokens = 0;
     let outputTokens = 0;
 
-    const stream = await client.chat.completions.create({
+    const stream = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      messages: conversationHistory as never,
+      system: [{ type: 'text', text: OUTREACH_SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
+      messages: conversationHistory,
       stream: true,
     });
 
-    for await (const chunk of stream) {
-      const delta = chunk.choices[0]?.delta?.content ?? '';
-      if (delta) {
-        fullMessage += delta;
-        res.write(`data: ${JSON.stringify({ delta })}\n\n`);
+    for await (const event of stream) {
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+        fullMessage += event.delta.text;
+        res.write(`data: ${JSON.stringify({ delta: event.delta.text })}\n\n`);
       }
-      if (chunk.usage) {
-        inputTokens = chunk.usage.prompt_tokens ?? 0;
-        outputTokens = chunk.usage.completion_tokens ?? 0;
+      if (event.type === 'message_delta' && event.usage) {
+        outputTokens = event.usage.output_tokens;
+      }
+      if (event.type === 'message_start' && event.message.usage) {
+        inputTokens = event.message.usage.input_tokens;
       }
     }
 
@@ -174,18 +176,15 @@ export class ClaudeOutreachService {
     const conversation = await outreachDb.createConversation(creator.id, channel, tone, language);
     const userPrompt = buildOutreachPrompt(creator, score, channel, tone, language);
 
-    const response = await client.chat.completions.create({
+    const response = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      messages: [
-        { role: 'system', content: OUTREACH_SYSTEM_PROMPT },
-        { role: 'user', content: userPrompt },
-      ],
+      system: [{ type: 'text', text: OUTREACH_SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
+      messages: [{ role: 'user', content: userPrompt }],
     });
 
-    const message = response.choices[0]?.message?.content ?? '';
-    const history = [
-      { role: 'system', content: OUTREACH_SYSTEM_PROMPT },
+    const message = response.content.find((b) => b.type === 'text')?.text ?? '';
+    const history: Anthropic.MessageParam[] = [
       { role: 'user', content: userPrompt },
       { role: 'assistant', content: message },
     ];
@@ -194,7 +193,7 @@ export class ClaudeOutreachService {
     return {
       conversationId: conversation.id,
       message,
-      tokens: { input: response.usage?.prompt_tokens ?? 0, output: response.usage?.completion_tokens ?? 0 },
+      tokens: { input: response.usage.input_tokens, output: response.usage.output_tokens },
     };
   }
 
@@ -206,7 +205,7 @@ export class ClaudeOutreachService {
     const conversation = await outreachDb.getConversation(conversationId);
     if (!conversation) throw new Error('Conversation not found');
 
-    const history = conversation.messages as Array<{ role: string; content: string }>;
+    const history = conversation.messages as Anthropic.MessageParam[];
 
     const regenerationPrompt = `Generate a completely different outreach message for the same creator.
 
@@ -220,19 +219,20 @@ Same creator, channel, tone — fresh angle. Message only, no preamble:`;
 
     history.push({ role: 'user', content: regenerationPrompt });
 
-    const response = await client.chat.completions.create({
+    const response = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      messages: history as never,
+      system: [{ type: 'text', text: OUTREACH_SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
+      messages: history,
     });
 
-    const newMessage = response.choices[0]?.message?.content ?? '';
+    const newMessage = response.content.find((b) => b.type === 'text')?.text ?? '';
     history.push({ role: 'assistant', content: newMessage });
     await outreachDb.updateConversation(conversationId, history, conversation.generation_count + 1);
 
     return {
       message: newMessage,
-      tokens: { input: response.usage?.prompt_tokens ?? 0, output: response.usage?.completion_tokens ?? 0 },
+      tokens: { input: response.usage.input_tokens, output: response.usage.output_tokens },
     };
   }
 }

@@ -1,4 +1,4 @@
-import type OpenAI from 'openai';
+import type Anthropic from '@anthropic-ai/sdk';
 import client, { MODEL } from './client';
 import { SCORING_TOOLS, executeTool } from './tools';
 import type { CreatorWithScore, CreatorScore, ScoringReasoning } from '@nex/shared';
@@ -144,36 +144,31 @@ Use get_vertical_benchmarks to calibrate, then respond with JSON score only.`;
 
 export class ClaudeScoringService {
   async scoreCreator(creator: CreatorWithScore): Promise<Omit<CreatorScore, 'id' | 'creator_id' | 'scored_at'>> {
-    const messages: OpenAI.Chat.ChatCompletionMessageParam[] = [
-      { role: 'system', content: SCORING_SYSTEM_PROMPT },
+    const messages: Anthropic.MessageParam[] = [
       { role: 'user', content: buildScoringPrompt(creator) },
     ];
 
     let totalInputTokens = 0;
     let totalOutputTokens = 0;
 
-    // Agentic tool loop — Claude calls tools before producing final JSON score
     while (true) {
-      const response = await client.chat.completions.create({
+      const response = await client.messages.create({
         model: MODEL,
         max_tokens: 4096,
         temperature: 0,
+        system: [{ type: 'text', text: SCORING_SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
         tools: SCORING_TOOLS,
         messages,
       });
 
-      totalInputTokens += response.usage?.prompt_tokens ?? 0;
-      totalOutputTokens += response.usage?.completion_tokens ?? 0;
+      totalInputTokens += response.usage.input_tokens;
+      totalOutputTokens += response.usage.output_tokens;
 
-      const choice = response.choices[0];
-      const finishReason = choice.finish_reason;
-      const message = choice.message;
+      if (response.stop_reason === 'end_turn') {
+        const textBlock = response.content.find((b) => b.type === 'text');
+        if (!textBlock || textBlock.type !== 'text') throw new Error('No text in Claude response');
 
-      if (finishReason === 'stop') {
-        const text = message.content ?? '';
-
-        // Extract JSON from response (Claude might wrap in markdown)
-        const jsonMatch = text.match(/\{[\s\S]*\}/);
+        const jsonMatch = textBlock.text.match(/\{[\s\S]*\}/);
         if (!jsonMatch) throw new Error('No JSON found in Claude response');
 
         const scoreData = JSON.parse(jsonMatch[0]) as {
@@ -200,22 +195,19 @@ export class ClaudeScoringService {
         };
       }
 
-      if (finishReason === 'tool_calls') {
-        messages.push({ role: 'assistant', content: message.content, tool_calls: message.tool_calls });
+      if (response.stop_reason === 'tool_use') {
+        messages.push({ role: 'assistant', content: response.content });
 
-        for (const toolCall of message.tool_calls ?? []) {
-          if (toolCall.type !== 'function') continue;
-          const fn = (toolCall as unknown as { function: { name: string; arguments: string } }).function;
-          const input = JSON.parse(fn.arguments) as Record<string, string>;
-          const result = await executeTool(fn.name, input);
-          messages.push({
-            role: 'tool',
-            tool_call_id: toolCall.id,
-            content: result,
-          });
+        const toolResults: Anthropic.ToolResultBlockParam[] = [];
+        for (const block of response.content) {
+          if (block.type === 'tool_use') {
+            const result = await executeTool(block.name, block.input as Record<string, string>);
+            toolResults.push({ type: 'tool_result', tool_use_id: block.id, content: result });
+          }
         }
+        messages.push({ role: 'user', content: toolResults });
       } else {
-        throw new Error(`Unexpected finish reason: ${finishReason}`);
+        throw new Error(`Unexpected stop reason: ${response.stop_reason}`);
       }
     }
   }
