@@ -1,0 +1,191 @@
+# NEX ENTERTAINMENT
+## Technical Assessment
+### Creator Sourcing, Outreach & Tracking Tool
+**Mid-Level Engineer**
+Take-Home Assessment | 2-3 Days
+*CONFIDENTIAL*
+
+---
+
+## Overview
+
+Nex Entertainment is the #1 TikTok GO agency globally by GMV, managing 5,000+ creators across Indonesia and 400+ in the US. We generate $4.3M+ monthly GMV across hotels, dining, and attractions on TikTok's local services platform.
+
+Your task is to build a working prototype of a Creator Sourcing, Outreach & Tracking Tool that uses Claude (Anthropic's AI) as the intelligence layer. This tool should help our team discover high-potential TikTok creators, automate personalized outreach, and track the full recruitment pipeline — all powered by AI.
+
+This assessment tests three things: your ability to build with Claude's API effectively, your fullstack product instincts, and your approach to data pipelines and automation.
+
+---
+
+## What We Provide
+
+| Resource | Description |
+|---|---|
+| Sample creator data | CSV with 200 anonymized creator profiles from our Indonesia program (follower count, views/video, posting frequency, GMV generated, level history). Use this to calibrate your scoring model. |
+| Scoring rubric | Our current 4-dimension scoring framework (Content Velocity 30%, Audience Reach 30%, Commerce Readiness 25%, Growth Trajectory 15%) with benchmark data from 6,962 creators over 13 months. |
+| Outreach templates | 3 sample outreach messages (DM and email) at different tones that have worked well for our team. Your tool should be able to generate variations of these. |
+| API access | An Anthropic API key with sufficient credits for the assessment period. Use Claude Sonnet 4 as the default model. |
+
+---
+
+## The Challenge
+
+Build a web application with three core modules. You are not expected to build a production-ready system — we want to see a working prototype that demonstrates strong technical decisions and thoughtful use of AI.
+
+---
+
+## Module 1: Creator Discovery & Scoring
+
+Build an interface where a recruiter can input search parameters and get back a scored list of creator candidates.
+
+**Requirements:**
+- Accept inputs: vertical (ACC/FNB/TTD), target region/city, follower range, minimum views/video threshold
+- Use Claude to analyze creator profile data and generate a potential score (0-100) across the four scoring dimensions we provide
+- Display results in a sortable, filterable table with tier assignments (Star Potential / Rising Star / Promising / Developing)
+- Each creator row should be expandable to show Claude's reasoning for the score — not just a number, but an explanation of why this creator is or isn't promising
+- Include a "batch import" feature: upload a CSV of TikTok handles and get scored results for all of them
+
+**What we're evaluating:**
+- How you structure prompts to Claude for consistent, calibrated scoring
+- How you handle the tradeoff between accuracy (sending more data to Claude) and speed/cost (minimizing tokens)
+- Whether the scoring output is deterministic enough to be useful for ranking
+
+---
+
+## Module 2: Outreach Generation & Personalization
+
+Build a system that generates personalized outreach messages for each creator, tailored to their profile and our brand voice.
+
+**Requirements:**
+- Given a scored creator profile, generate a personalized outreach message (DM or email) using Claude
+- Support multiple outreach channels: TikTok DM (short, casual), email (professional), and Instagram DM (visual-first)
+- Allow the recruiter to select a tone: casual, professional, or enthusiastic
+- Include a "regenerate" button that produces a meaningfully different variation, not just rephrased words
+- Support batch generation: select 10-50 creators and generate outreach for all of them in one action, with a progress indicator
+- Store generated messages in the database, linked to the creator record
+
+**What we're evaluating:**
+- Prompt engineering quality — do the messages sound human and personalized, or generic and AI-obvious?
+- System design for batch operations — how do you handle rate limiting, failures, and partial completions?
+- Whether you use structured outputs, tool use, or other Claude features appropriately
+
+---
+
+## Module 3: Pipeline Tracker & Analytics
+
+Build a tracking system that manages the full creator recruitment pipeline from discovery through onboarding.
+
+**Requirements:**
+- Pipeline stages: Discovered -> Contacted -> Responded -> Negotiating -> Onboarded (or Declined/Unresponsive at any stage)
+- Kanban board view showing creators in each stage, draggable between stages
+- When a creator moves to "Contacted," the system should log which message was sent and when
+- A dashboard showing key metrics: total creators by stage, conversion rates between stages, average time in each stage, outreach response rate
+- An AI-powered "smart follow-up" feature: for creators who haven't responded in X days, use Claude to generate a follow-up message that references the original outreach and adds a new angle
+- Export functionality: export the full pipeline to XLSX with proper formatting
+
+**What we're evaluating:**
+- Data modeling — how do you structure the creator, message, and pipeline state data?
+- Product thinking — does the tracker actually help a recruiter work faster, or is it just a database with a UI?
+- Analytics quality — are the dashboard metrics actionable, or just vanity numbers?
+
+---
+
+## Technical Requirements
+
+| Area | Requirement |
+|---|---|
+| Frontend | React or Next.js. Use any component library you prefer. |
+| Backend | Node.js (Express/Fastify) or Python (FastAPI/Flask). Must expose a clean REST or GraphQL API. |
+| Database | Your choice — SQLite is fine for this prototype. Show us your schema design. |
+| AI integration | Anthropic API (Claude). You must use at least: structured outputs or tool use, system prompts, and multi-turn conversations in at least one feature. |
+| Deployment | Provide a working demo URL or Docker setup that runs with a single command. Firebase hosting is a plus but not required. |
+| Code quality | TypeScript preferred. Clean project structure, error handling, and at least a few meaningful tests for the scoring logic. |
+
+---
+
+## Bonus Points (Not Required)
+
+These are stretch goals. Do not attempt them at the expense of the core modules being solid.
+
+- **Claude tool use:** define tools that let Claude call your backend functions (e.g., look up a creator's stats, check if they're already in the pipeline) during a conversation
+- **Streaming responses:** use Claude's streaming API for outreach generation so the recruiter sees the message being written in real-time
+- **Cost tracking:** display estimated API cost per operation (scoring a batch, generating outreach) based on token usage
+- **Multi-language support:** generate outreach in Bahasa Indonesia or English depending on the target market
+- **Scheduling:** let recruiters schedule outreach to be sent at optimal times
+- **Claude as a skill:** structure part of your system as a reusable Claude Code skill with a SKILL.md file
+
+---
+
+## Evaluation Criteria
+
+| Weight | Dimension | What We Look For |
+|---|---|---|
+| 30% | Claude API mastery | Effective prompting, appropriate use of structured outputs/tool use, cost-conscious API design, handling of edge cases (hallucination, inconsistent scoring, rate limits) |
+| 25% | Product quality | Does this feel like a tool a recruiter would actually want to use? Clean UI, sensible workflows, thoughtful error states, loading indicators |
+| 25% | System design | Database schema, API design, separation of concerns, how you handle batch operations and failures, scalability thinking |
+| 20% | Code quality | Clean, readable code. Meaningful tests for scoring logic. Good project structure. Clear README with setup instructions. |
+
+---
+
+## Business Context to Inform Your Design
+
+These are real numbers from our operation. Use them to inform your design decisions.
+
+### Creator Economics
+- Top 5% of creators (348 out of 6,962) generate 76% of all GMV — sourcing quality matters far more than quantity
+- L4 creators generate $16,267/month vs $49 at L1 — a 332x difference
+- Only 4.7% of L1 creators promote to L2 each month — this is the biggest bottleneck
+- The #1 predictor of success is views/video, not follower count. Fast risers averaged 22K views/video vs 4.3K for stuck creators
+- Fast risers posted 55 videos/month vs 12.5 for stuck creators
+
+### Operational Scale
+- Indonesia: 5,000+ active creators across ACC, FNB, and TTD verticals
+- US: 400+ creators onboarded in the first month (March 2026)
+- Each recruiter sources ~100 creators per batch
+- We currently score and track creators in spreadsheets — the tool you build would replace this workflow
+
+### Scoring Framework
+
+Your scoring model should implement these four dimensions:
+
+1. **Content Velocity (30%):** Posting frequency and recency. L1->L2 threshold is ~34 videos/month.
+2. **Audience Reach (30%):** Total views + views/video. L1->L2 requires ~273K views/month.
+3. **Commerce Readiness (25%):** Any sign of existing commerce behavior (TikTok Shop, affiliate links, booking links, price mentions).
+4. **Growth Trajectory (15%):** Whether recent content outperforms older content. Captures momentum vs decline.
+
+**Tier thresholds:**
+- Star Potential: 70-100
+- Rising Star: 50-69
+- Promising: 30-49
+- Developing: 0-29
+
+---
+
+## Submission Instructions
+
+1. Push your code to a private GitHub repository and invite **hanxu@nexentertainment.live** as a collaborator
+2. Include a README.md with: setup instructions, architecture decisions and tradeoffs, screenshots of key features, and estimated API costs per operation
+3. Provide either a live demo URL or a Docker Compose setup that runs with a single command
+4. Include a short (5-10 minute) Loom video walking through your solution: what you built, why you made key technical decisions, and what you'd improve with more time
+
+**Deadline:** 72 hours from when you receive this brief and the API key.
+
+**Questions:** Email han@nexentertainment.live — we're happy to clarify requirements. Asking good questions is a positive signal, not a negative one.
+
+---
+
+## What We Explicitly Don't Want
+
+To help you prioritize, here's what will NOT impress us:
+
+- A beautiful UI with no real AI integration — the Claude integration is the core of this assessment
+- Hardcoded scoring that doesn't actually use Claude — we want to see how you prompt and parse AI responses
+- Over-engineered infrastructure (Kubernetes, microservices, message queues) — this is a prototype, ship fast
+- Copy-pasting Claude's default outputs without structured extraction — show us you understand tool use and structured outputs
+- A system that only works with the sample data — it should handle any creator profile input gracefully
+
+---
+
+*Good luck. We're excited to see what you build.*
+
+*- The Nex Engineering Team*

@@ -1,0 +1,191 @@
+# NEX ENTERTAINMENT
+## Penilaian Teknis
+### Alat Pencarian, Penjangkauan & Pelacakan Kreator
+**Mid-Level Engineer**
+Penilaian Mandiri | 2-3 Hari
+*RAHASIA*
+
+---
+
+## Gambaran Umum
+
+Nex Entertainment adalah agensi TikTok GO #1 di dunia berdasarkan GMV, mengelola 5.000+ kreator di seluruh Indonesia dan 400+ di AS. Kami menghasilkan GMV bulanan lebih dari $4,3 juta dari hotel, restoran, dan atraksi wisata di platform layanan lokal TikTok.
+
+Tugas kamu adalah membangun prototipe fungsional dari Alat Pencarian, Penjangkauan & Pelacakan Kreator yang menggunakan Claude (AI dari Anthropic) sebagai lapisan kecerdasan. Alat ini harus membantu tim kami menemukan kreator TikTok berpotensi tinggi, mengotomasi penjangkauan yang dipersonalisasi, dan melacak seluruh pipeline rekrutmen — semuanya didukung oleh AI.
+
+Penilaian ini menguji tiga hal: kemampuanmu membangun dengan Claude API secara efektif, insting produk fullstack-mu, dan pendekatanmu terhadap pipeline data dan otomasi.
+
+---
+
+## Yang Kami Sediakan
+
+| Sumber Daya | Deskripsi |
+|---|---|
+| Data kreator sampel | CSV berisi 200 profil kreator anonim dari program Indonesia kami (jumlah pengikut, views/video, frekuensi posting, GMV yang dihasilkan, riwayat level). Gunakan ini untuk mengkalibrasi model scoringmu. |
+| Rubrik penilaian | Framework scoring 4 dimensi kami saat ini (Content Velocity 30%, Audience Reach 30%, Commerce Readiness 25%, Growth Trajectory 15%) dengan data benchmark dari 6.962 kreator selama 13 bulan. |
+| Template penjangkauan | 3 contoh pesan penjangkauan (DM dan email) dengan nada berbeda yang sudah terbukti berhasil untuk tim kami. Alat kamu harus bisa menghasilkan variasi dari pesan-pesan ini. |
+| Akses API | API key Anthropic dengan kredit yang cukup untuk periode penilaian. Gunakan Claude Sonnet 4 sebagai model default. |
+
+---
+
+## Tantangan
+
+Bangun aplikasi web dengan tiga modul inti. Kamu tidak diharapkan membangun sistem siap produksi — kami ingin melihat prototipe yang berfungsi dan menunjukkan keputusan teknis yang kuat serta penggunaan AI yang bijak.
+
+---
+
+## Modul 1: Pencarian & Penilaian Kreator
+
+Bangun antarmuka di mana seorang rekruter dapat memasukkan parameter pencarian dan mendapatkan daftar kandidat kreator yang telah diberi skor.
+
+**Persyaratan:**
+- Menerima input: vertikal (ACC/FNB/TTD), wilayah/kota target, rentang pengikut, ambang batas minimum views/video
+- Gunakan Claude untuk menganalisis data profil kreator dan menghasilkan skor potensial (0-100) di empat dimensi scoring yang kami sediakan
+- Tampilkan hasil dalam tabel yang dapat diurutkan dan difilter dengan penugasan tier (Star Potential / Rising Star / Promising / Developing)
+- Setiap baris kreator harus bisa diperluas untuk menampilkan alasan Claude dalam memberikan skor — bukan sekadar angka, tetapi penjelasan mengapa kreator ini menjanjikan atau tidak
+- Sertakan fitur "impor massal": unggah CSV berisi handle TikTok dan dapatkan hasil skor untuk semuanya
+
+**Yang kami evaluasi:**
+- Bagaimana kamu menyusun prompt ke Claude untuk scoring yang konsisten dan terkalibrasi
+- Bagaimana kamu menangani tradeoff antara akurasi (mengirim lebih banyak data ke Claude) dan kecepatan/biaya (meminimalkan token)
+- Apakah output scoring cukup deterministik untuk berguna dalam perankingan
+
+---
+
+## Modul 2: Pembuatan & Personalisasi Penjangkauan
+
+Bangun sistem yang menghasilkan pesan penjangkauan yang dipersonalisasi untuk setiap kreator, disesuaikan dengan profil mereka dan suara merek kami.
+
+**Persyaratan:**
+- Berdasarkan profil kreator yang telah diberi skor, buat pesan penjangkauan yang dipersonalisasi (DM atau email) menggunakan Claude
+- Dukung berbagai saluran penjangkauan: TikTok DM (singkat, santai), email (profesional), dan Instagram DM (mengutamakan visual)
+- Izinkan rekruter memilih nada: santai, profesional, atau antusias
+- Sertakan tombol "buat ulang" yang menghasilkan variasi yang benar-benar berbeda, bukan sekadar parafrase
+- Dukung pembuatan massal: pilih 10-50 kreator dan buat penjangkauan untuk semuanya dalam satu tindakan, dengan indikator kemajuan
+- Simpan pesan yang dihasilkan dalam database, tertaut ke catatan kreator
+
+**Yang kami evaluasi:**
+- Kualitas rekayasa prompt — apakah pesan terdengar manusiawi dan dipersonalisasi, atau generik dan terlihat jelas dibuat AI?
+- Desain sistem untuk operasi massal — bagaimana kamu menangani pembatasan laju (rate limiting), kegagalan, dan penyelesaian parsial?
+- Apakah kamu menggunakan structured outputs, tool use, atau fitur Claude lainnya secara tepat
+
+---
+
+## Modul 3: Pelacak Pipeline & Analitik
+
+Bangun sistem pelacakan yang mengelola seluruh pipeline rekrutmen kreator dari penemuan hingga onboarding.
+
+**Persyaratan:**
+- Tahap pipeline: Discovered → Contacted → Responded → Negotiating → Onboarded (atau Declined/Unresponsive di tahap mana pun)
+- Tampilan papan Kanban yang menampilkan kreator di setiap tahap, dapat dipindahkan antar tahap dengan drag-and-drop
+- Saat kreator berpindah ke "Contacted," sistem harus mencatat pesan mana yang dikirim dan kapan
+- Dashboard yang menampilkan metrik utama: total kreator per tahap, tingkat konversi antar tahap, rata-rata waktu di setiap tahap, tingkat respons penjangkauan
+- Fitur "tindak lanjut cerdas" berbasis AI: untuk kreator yang belum merespons dalam X hari, gunakan Claude untuk menghasilkan pesan tindak lanjut yang merujuk penjangkauan asli dan menambahkan sudut pandang baru
+- Fitur ekspor: ekspor seluruh pipeline ke XLSX dengan format yang tepat
+
+**Yang kami evaluasi:**
+- Pemodelan data — bagaimana kamu menyusun data kreator, pesan, dan status pipeline?
+- Pemikiran produk — apakah pelacak ini benar-benar membantu rekruter bekerja lebih cepat, atau hanya database dengan UI?
+- Kualitas analitik — apakah metrik dashboard dapat ditindaklanjuti, atau sekadar angka yang tidak berarti?
+
+---
+
+## Persyaratan Teknis
+
+| Area | Persyaratan |
+|---|---|
+| Frontend | React atau Next.js. Gunakan library komponen apa pun yang kamu inginkan. |
+| Backend | Node.js (Express/Fastify) atau Python (FastAPI/Flask). Harus mengekspos REST atau GraphQL API yang bersih. |
+| Database | Pilihanmu — SQLite sudah cukup untuk prototipe ini. Tunjukkan desain skemamu. |
+| Integrasi AI | Anthropic API (Claude). Kamu harus menggunakan setidaknya: structured outputs atau tool use, system prompts, dan multi-turn conversations di setidaknya satu fitur. |
+| Deployment | Sediakan URL demo yang berfungsi atau setup Docker yang bisa dijalankan dengan satu perintah. Firebase hosting adalah nilai tambah, tapi tidak wajib. |
+| Kualitas kode | TypeScript lebih disukai. Struktur proyek yang bersih, penanganan error, dan setidaknya beberapa test yang bermakna untuk logika scoring. |
+
+---
+
+## Poin Bonus (Tidak Wajib)
+
+Ini adalah tujuan tambahan. Jangan mencoba mencapainya jika mengorbankan soliditas modul inti.
+
+- **Claude tool use:** definisikan tools yang memungkinkan Claude memanggil fungsi backend-mu (misalnya, mencari statistik kreator, memeriksa apakah mereka sudah ada di pipeline) selama percakapan
+- **Streaming responses:** gunakan streaming API Claude untuk pembuatan penjangkauan sehingga rekruter melihat pesan ditulis secara real-time
+- **Pelacakan biaya:** tampilkan estimasi biaya API per operasi (scoring massal, pembuatan penjangkauan) berdasarkan penggunaan token
+- **Dukungan multi-bahasa:** buat penjangkauan dalam Bahasa Indonesia atau Inggris tergantung target pasar
+- **Penjadwalan:** izinkan rekruter menjadwalkan penjangkauan untuk dikirim pada waktu yang optimal
+- **Claude sebagai skill:** strukturkan bagian sistemmu sebagai Claude Code skill yang dapat digunakan kembali dengan file SKILL.md
+
+---
+
+## Kriteria Evaluasi
+
+| Bobot | Dimensi | Yang Kami Cari |
+|---|---|---|
+| 30% | Penguasaan Claude API | Prompting yang efektif, penggunaan structured outputs/tool use yang tepat, desain API yang hemat biaya, penanganan edge case (halusinasi, scoring tidak konsisten, rate limit) |
+| 25% | Kualitas produk | Apakah ini terasa seperti alat yang benar-benar ingin digunakan rekruter? UI yang bersih, alur kerja yang masuk akal, status error yang bijak, indikator loading |
+| 25% | Desain sistem | Skema database, desain API, pemisahan concern, cara menangani operasi massal dan kegagalan, pemikiran skalabilitas |
+| 20% | Kualitas kode | Kode yang bersih dan mudah dibaca. Test yang bermakna untuk logika scoring. Struktur proyek yang baik. README yang jelas dengan instruksi setup. |
+
+---
+
+## Konteks Bisnis untuk Menginformasikan Desainmu
+
+Ini adalah angka nyata dari operasi kami. Gunakan ini untuk menginformasikan keputusan desainmu.
+
+### Ekonomi Kreator
+- 5% teratas kreator (348 dari 6.962) menghasilkan 76% dari seluruh GMV — kualitas sourcing jauh lebih penting daripada kuantitas
+- Kreator L4 menghasilkan $16.267/bulan vs $49 di L1 — perbedaan 332x
+- Hanya 4,7% kreator L1 yang naik ke L2 setiap bulan — ini adalah hambatan terbesar
+- Prediktor kesuksesan #1 adalah views/video, bukan jumlah pengikut. Fast risers rata-rata 22K views/video vs 4.300 untuk kreator yang stagnan
+- Fast risers memposting 55 video/bulan vs 12,5 untuk kreator yang stagnan
+
+### Skala Operasional
+- Indonesia: 5.000+ kreator aktif di vertikal ACC, FNB, dan TTD
+- AS: 400+ kreator di-onboard dalam bulan pertama (Maret 2026)
+- Setiap rekruter mencari ~100 kreator per batch
+- Saat ini kami menilai dan melacak kreator di spreadsheet — alat yang kamu bangun akan menggantikan alur kerja ini
+
+### Framework Scoring
+
+Model scoringmu harus mengimplementasikan empat dimensi ini:
+
+1. **Content Velocity (30%):** Frekuensi dan kebaruan posting. Ambang batas L1→L2 adalah ~34 video/bulan.
+2. **Audience Reach (30%):** Total views + views/video. L1→L2 membutuhkan ~273K views/bulan.
+3. **Commerce Readiness (25%):** Tanda-tanda perilaku commerce yang sudah ada (TikTok Shop, affiliate links, booking links, penyebutan harga).
+4. **Growth Trajectory (15%):** Apakah konten terbaru mengungguli konten lama. Menangkap momentum vs penurunan.
+
+**Ambang batas tier:**
+- Star Potential: 70-100
+- Rising Star: 50-69
+- Promising: 30-49
+- Developing: 0-29
+
+---
+
+## Instruksi Pengumpulan
+
+1. Push kode kamu ke repositori GitHub privat dan undang **hanxu@nexentertainment.live** sebagai kolaborator
+2. Sertakan README.md dengan: instruksi setup, keputusan arsitektur dan trade-off, screenshot fitur utama, dan estimasi biaya API per operasi
+3. Sediakan URL demo langsung atau setup Docker Compose yang bisa dijalankan dengan satu perintah
+4. Sertakan video Loom singkat (5-10 menit) yang menjelaskan solusimu: apa yang kamu bangun, mengapa kamu membuat keputusan teknis utama, dan apa yang akan kamu tingkatkan dengan lebih banyak waktu
+
+**Tenggat Waktu:** 72 jam dari saat kamu menerima brief ini dan API key.
+
+**Pertanyaan:** Email han@nexentertainment.live — kami dengan senang hati mengklarifikasi persyaratan. Mengajukan pertanyaan yang bagus adalah sinyal positif, bukan negatif.
+
+---
+
+## Yang Secara Eksplisit Tidak Kami Inginkan
+
+Untuk membantumu memprioritaskan, berikut hal yang TIDAK akan mengesankan kami:
+
+- UI yang indah tanpa integrasi AI yang nyata — integrasi Claude adalah inti dari penilaian ini
+- Scoring yang di-hardcode dan tidak benar-benar menggunakan Claude — kami ingin melihat bagaimana kamu membuat prompt dan mengurai respons AI
+- Infrastruktur yang terlalu direkayasa (Kubernetes, microservices, message queue) — ini adalah prototipe, kirim dengan cepat
+- Menyalin output default Claude tanpa ekstraksi terstruktur — tunjukkan bahwa kamu memahami tool use dan structured outputs
+- Sistem yang hanya bekerja dengan data sampel — harus menangani input profil kreator apa pun dengan baik
+
+---
+
+*Semoga sukses. Kami sangat antusias melihat apa yang kamu bangun.*
+
+*- Tim Engineering Nex*

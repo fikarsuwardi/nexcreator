@@ -1,0 +1,201 @@
+creator_id,handle,follower_count,vertical,region,content_niche,videos_per_month,avg_views_per_video,total_monthly_views,posting_trend,last_post_days_ago,commerce_signals,unique_pois_featured,monthly_gmv_usd,monthly_orders,open_loop_gmv_pct,current_level,months_in_program,level_history,has_email_in_bio
+CRE-0001,@creator_0001,200,ACC,Jakarta,budget hotel; hotel review; hotel room tour,37,16440,608280,increasing,3,mentions_prices,12,312.58,7,68,L2,4,L0→L1→L2→L3→L2,True
+CRE-0002,@creator_0002,17045,FNB,Bali,cooking; street food; kuliner,41,3832,157112,stable,4,has_affiliate_links,9,4.25,1,56,L2,8,L0→L1→L2,True
+CRE-0003,@creator_0003,4252,TTD,Malang,cultural tourism; hidden gems; theme park,0,2783,0,increasing,54,tags_locations_only,2,3.71,0,50,L1,5,L0→L1,False
+CRE-0004,@creator_0004,32332,TTD,Yogyakarta,hidden gems; nature; cultural tourism,27,7111,191997,increasing,1,has_tiktok_shop,27,1378.19,55,83,L3,5,L1→L2→L3,True
+CRE-0005,@creator_0005,105578,FNB,Bali,restaurant review; mukbang; cooking,43,34218,1471374,increasing,2,has_tiktok_shop,33,423.04,121,83,L4,11,L0→L2→L3→L4,True
+CRE-0006,@creator_0006,4887,FNB,Semarang,restaurant review; food vlog; kuliner,5,2881,14405,stable,4,none,3,0.92,0,40,L1,12,L0→L1→L2→L1,False
+CRE-0007,@creator_0007,2137,FNB,Semarang,food vlog; kuliner; street food,1,56,56,stable,8,tags_locations_only,9,0.0,0,35,L1,9,L0→L1,False
+CRE-0008,@creator_0008,617,ACC,Jakarta,staycation; budget hotel; hotel review,9,9246,83214,decreasing,9,none,4,7.06,0,30,L1,13,L0→L1,True
+CRE-0009,@creator_0009,6541,ACC,Lombok,luxury hotel; resort vlog; villa tour,0,898,0,stable,69,mentions_prices,7,3.08,0,31,L1,9,L0→L1→L2→L1,False
+CRE-0010,@creator_0010,5634,ACC,Bali,budget hotel; staycation; resort vlog,33,4230,139590,stable,34,none,6,311.43,7,41,L1,6,L0→L1,False
+CRE-0011,@creator_0011,3715,ACC,East Java,villa tour; luxury hotel; resort vlog,14,2780,38920,stable,20,none,2,83.84,2,25,L1,10,L0→L1,False
+CRE-0012,@creator_0012,3058,ACC,East Java,hotel room tour; staycation; luxury hotel,35,9357,327495,stable,99,mentions_prices,1,603.72,13,36,L1,8,L0→L1,False
+CRE-0013,@creator_0013,3085,TTD,Jakarta,adventure; cultural tourism; beach,11,8657,95227,decreasing,9,mentions_prices,4,2.62,0,87,L1,3,L0→L1,True
+CRE-0014,@creator_0014,2948,ACC,Yogyakarta,budget hotel; hotel review; hotel room tour,6,7089,42534,stable,18,none,4,65.66,1,35,L1,9,L1 (unchanged),True
+CRE-0015,@creator_0015,13006,FNB,Medan,food vlog; kuliner; mukbang,39,16088,627432,increasing,0,tags_locations_only,19,8.62,2,49,L2,5,L0→L1→L2→L3→L2,False
+CRE-0016,@creator_0016,1708,ACC,Jakarta,hotel review; staycation; resort vlog,7,6894,48258,increasing,100,none,5,112.4,2,20,L1,2,L0→L1→L2→L1,True
+CRE-0017,@creator_0017,4807,FNB,Semarang,cooking; cafe review; street food,16,7696,123136,decreasing,1,none,1,0.63,0,64,L1,5,L0→L1,True
+CRE-0018,@creator_0018,200,FNB,Jakarta,street food; kuliner; cooking,19,12820,243580,increasing,46,mentions_prices,1,1.54,0,32,L1,2,L0→L1,True
+CRE-0019,@creator_0019,794,ACC,Lombok,hotel room tour; luxury hotel; staycation,9,3304,29736,stable,10,tags_locations_only,7,121.35,3,67,L1,9,L0→L1→L2→L1,False
+CRE-0020,@creator_0020,31768,ACC,Lombok,villa tour; resort vlog; luxury hotel,41,20684,848044,stable,1,has_tiktok_shop,10,2398.93,53,65,L3,1,L1→L2→L3,False
+CRE-0021,@creator_0021,58643,ACC,Central Java,budget hotel; villa tour; resort vlog,21,35289,741069,decreasing,2,tiktok_shop_plus_affiliates,22,0.0,0,96,L4,9,L0→L1→L2→L3→L4,False
+CRE-0022,@creator_0022,200,FNB,Bandung,street food; mukbang; kuliner,4,1314,5256,stable,2,none,6,0.11,0,37,L1,7,L1 (unchanged),False
+CRE-0023,@creator_0023,1399,ACC,Yogyakarta,staycation; villa tour; budget hotel,18,6173,111114,decreasing,0,tags_locations_only,5,104.99,2,57,L1,6,L0→L1,False
+CRE-0024,@creator_0024,4574,FNB,Bali,cooking; cafe review; mukbang,6,4735,28410,increasing,7,none,5,0.36,0,49,L1,9,L0→L1,True
+CRE-0025,@creator_0025,2553,FNB,Bandung,food vlog; cafe review; kuliner,17,7927,134759,decreasing,16,none,8,0.27,0,39,L1,8,L0→L1,False
+CRE-0026,@creator_0026,21588,FNB,Medan,restaurant review; street food; cafe review,44,24414,1074216,decreasing,1,has_booking_links,33,24.69,7,63,L3,13,L0→L2→L3,False
+CRE-0027,@creator_0027,6128,FNB,Malang,street food; food vlog; restaurant review,11,2520,27720,stable,2,tags_locations_only,7,0.08,0,48,L1,11,L1 (unchanged),False
+CRE-0028,@creator_0028,200,FNB,Jakarta,restaurant review; cafe review; street food,15,6271,94065,increasing,17,tags_locations_only,10,0.52,0,60,L1,13,L0→L1,False
+CRE-0029,@creator_0029,2175,ACC,Central Java,hotel room tour; villa tour; staycation,0,853,0,stable,112,none,7,3.32,0,25,L1,13,L0→L1,True
+CRE-0030,@creator_0030,2488,ACC,Jakarta,hotel review; luxury hotel; hotel room tour,19,4360,82840,increasing,74,none,4,0.0,0,46,L1,6,L0→L1→L2→L1,False
+CRE-0031,@creator_0031,34922,ACC,Bali,resort vlog; hotel review; budget hotel,59,25398,1498482,increasing,0,has_affiliate_links,69,11270.62,250,82,L4,10,L1→L2→L3→L4,True
+CRE-0032,@creator_0032,2639,FNB,Yogyakarta,food vlog; restaurant review; street food,3,50,150,increasing,18,tags_locations_only,1,0.0,0,63,L1,7,L0→L1,True
+CRE-0033,@creator_0033,932,ACC,Yogyakarta,hotel room tour; luxury hotel; budget hotel,58,16267,943486,stable,7,mentions_prices,19,222.87,5,51,L2,8,L0→L2,False
+CRE-0034,@creator_0034,4910,TTD,Jakarta,hidden gems; nature; beach,30,21302,639060,stable,0,mentions_prices,25,746.26,30,78,L3,5,L0→L1→L3,True
+CRE-0035,@creator_0035,4540,ACC,East Java,staycation; villa tour; hotel room tour,7,4130,28910,decreasing,0,tags_locations_only,2,51.22,1,30,L1,12,L0→L1,False
+CRE-0036,@creator_0036,1996,FNB,Medan,cafe review; mukbang; restaurant review,10,2659,26590,stable,17,none,3,1.18,0,50,L1,7,L0→L1,False
+CRE-0037,@creator_0037,1495,FNB,Semarang,food vlog; street food; restaurant review,8,5927,47416,stable,15,tags_locations_only,2,0.61,0,45,L1,2,L0→L1,False
+CRE-0038,@creator_0038,200,TTD,Bandung,wisata; adventure; nature,31,11200,347200,stable,9,none,2,147.86,6,29,L1,8,L0→L1,False
+CRE-0039,@creator_0039,200,ACC,East Java,resort vlog; luxury hotel; hotel review,30,19985,599550,increasing,1,has_booking_links,30,7375.19,164,70,L3,7,L1→L2→L3,True
+CRE-0040,@creator_0040,1667,ACC,Bali,hotel room tour; staycation; villa tour,23,3835,88205,stable,8,tags_locations_only,10,77.06,2,17,L1,7,L0→L1→L2→L1,True
+CRE-0041,@creator_0041,200,ACC,Jakarta,villa tour; hotel room tour; hotel review,34,10222,347548,decreasing,8,none,9,398.3,9,38,L1,3,L1 (unchanged),False
+CRE-0042,@creator_0042,35093,FNB,Semarang,restaurant review; food vlog; cooking,53,30882,1636746,stable,0,has_affiliate_links,34,87.86,25,64,L3,1,L1→L2→L3,False
+CRE-0043,@creator_0043,4245,FNB,Malang,street food; kuliner; restaurant review,11,5360,58960,increasing,41,tags_locations_only,6,0.99,0,18,L1,2,L0→L1,False
+CRE-0044,@creator_0044,4199,ACC,Lombok,budget hotel; staycation; resort vlog,46,16054,738484,decreasing,0,mentions_prices,16,3658.01,81,73,L3,9,L0→L1→L3,True
+CRE-0045,@creator_0045,8770,ACC,Central Java,luxury hotel; resort vlog; budget hotel,40,4008,160320,stable,1,mentions_prices,9,575.46,13,46,L2,10,L0→L2,False
+CRE-0046,@creator_0046,2475,FNB,Malang,street food; kuliner; cooking,2,1047,2094,decreasing,13,none,6,0.25,0,32,L1,4,L1 (unchanged),False
+CRE-0047,@creator_0047,47110,FNB,Malang,kuliner; street food; restaurant review,29,20276,588004,stable,3,has_booking_links,17,25.48,7,58,L3,3,L0→L2→L3,False
+CRE-0048,@creator_0048,38156,FNB,Surabaya,kuliner; mukbang; cafe review,69,21041,1451829,decreasing,0,has_affiliate_links,26,45.81,13,73,L3,8,L0→L2→L3,True
+CRE-0049,@creator_0049,1221,ACC,Yogyakarta,hotel review; budget hotel; hotel room tour,45,9301,418545,stable,5,mentions_prices,20,440.9,10,73,L2,13,L0→L1→L2→L3→L2,True
+CRE-0050,@creator_0050,8508,ACC,West Java,hotel review; resort vlog; hotel room tour,15,19336,290040,stable,2,mentions_prices,14,1040.69,23,32,L2,12,L0→L1→L2,False
+CRE-0051,@creator_0051,483,ACC,East Java,luxury hotel; hotel review; villa tour,14,5189,72646,stable,8,none,8,87.29,2,42,L1,7,L0→L1,False
+CRE-0052,@creator_0052,15439,ACC,Yogyakarta,hotel review; staycation; villa tour,60,13363,801780,stable,3,has_affiliate_links,17,574.39,13,50,L2,6,L0→L2,False
+CRE-0053,@creator_0053,200,TTD,Bandung,hidden gems; cultural tourism; beach,11,7492,82412,decreasing,7,tags_locations_only,10,6.92,0,60,L1,1,L0→L1,False
+CRE-0054,@creator_0054,16546,FNB,Surabaya,street food; cooking; restaurant review,39,14606,569634,decreasing,5,mentions_prices,9,11.7,3,61,L2,11,L0→L1→L2,True
+CRE-0055,@creator_0055,702,FNB,Medan,mukbang; cooking; restaurant review,22,9059,199298,decreasing,4,none,4,2.06,1,32,L1,9,L0→L1→L2→L1,False
+CRE-0056,@creator_0056,8089,FNB,Yogyakarta,kuliner; mukbang; cafe review,74,17720,1311280,decreasing,3,has_tiktok_shop,36,63.32,18,87,L3,1,L0→L1→L3,True
+CRE-0057,@creator_0057,200,TTD,Bandung,wisata; beach; hidden gems,35,11422,399770,increasing,0,has_booking_links,14,266.47,11,50,L2,10,L0→L2,False
+CRE-0058,@creator_0058,456,FNB,Yogyakarta,cafe review; street food; kuliner,2,604,1208,stable,6,tags_locations_only,8,0.1,0,41,L1,10,L1 (unchanged),False
+CRE-0059,@creator_0059,1326,TTD,Surabaya,hidden gems; adventure; beach,26,15775,410150,increasing,1,none,6,226.18,9,49,L1,6,L0→L1,True
+CRE-0060,@creator_0060,25917,ACC,West Java,hotel review; luxury hotel; hotel room tour,51,16394,836094,stable,2,has_booking_links,35,4495.22,100,75,L3,4,L1→L2→L3,True
+CRE-0061,@creator_0061,226,FNB,Medan,cooking; mukbang; food vlog,1,190,190,decreasing,19,none,1,0.07,0,43,L1,1,L0→L1→L2→L1,False
+CRE-0062,@creator_0062,6733,ACC,Yogyakarta,resort vlog; budget hotel; luxury hotel,20,8289,165780,stable,2,mentions_prices,7,658.08,15,39,L2,7,L0→L1→L2,False
+CRE-0063,@creator_0063,200,TTD,Malang,beach; nature; cultural tourism,23,6570,151110,decreasing,7,none,7,25.18,1,43,L1,5,L0→L1,False
+CRE-0064,@creator_0064,4328,FNB,Semarang,food vlog; cooking; mukbang,0,3221,0,decreasing,46,none,9,0.73,0,48,L1,6,L0→L1,False
+CRE-0065,@creator_0065,3942,FNB,Yogyakarta,food vlog; cafe review; restaurant review,28,10525,294700,decreasing,11,none,2,8.25,2,50,L1,12,L0→L1,False
+CRE-0066,@creator_0066,147888,TTD,Malang,theme park; beach; wisata,69,20848,1438512,increasing,1,has_affiliate_links,37,4447.61,178,74,L4,11,L0→L1→L2→L4,True
+CRE-0067,@creator_0067,4043,FNB,Bandung,cooking; food vlog; kuliner,21,5976,125496,increasing,1,tags_locations_only,3,0.25,0,47,L1,3,L0→L1,False
+CRE-0068,@creator_0068,1023,FNB,Malang,cafe review; restaurant review; food vlog,18,4338,78084,increasing,21,none,5,0.41,0,45,L1,10,L0→L1,True
+CRE-0069,@creator_0069,4247,TTD,Bali,nature; wisata; theme park,26,4501,117026,decreasing,35,none,7,19.98,1,35,L1,13,L0→L1,False
+CRE-0070,@creator_0070,3379,FNB,Yogyakarta,food vlog; restaurant review; cooking,19,10636,202084,decreasing,43,none,4,5.92,2,20,L1,5,L1 (unchanged),True
+CRE-0071,@creator_0071,11299,FNB,Bali,street food; cafe review; mukbang,46,15648,719808,stable,1,has_tiktok_shop,13,25.94,7,81,L3,6,L1→L2→L3,False
+CRE-0072,@creator_0072,6819,FNB,Surabaya,cafe review; restaurant review; kuliner,69,13351,921219,decreasing,2,has_booking_links,37,26.48,8,70,L3,13,L0→L1→L3,True
+CRE-0073,@creator_0073,8509,FNB,Jakarta,food vlog; mukbang; kuliner,24,9841,236184,decreasing,6,mentions_prices,19,6.94,2,58,L2,6,L0→L1→L2→L3→L2,False
+CRE-0074,@creator_0074,31489,FNB,Medan,mukbang; restaurant review; cooking,40,14609,584360,increasing,1,has_tiktok_shop,11,51.44,15,77,L3,10,L1→L2→L3,True
+CRE-0075,@creator_0075,2909,FNB,Semarang,mukbang; cooking; food vlog,25,11972,299300,decreasing,6,mentions_prices,14,2.26,1,52,L2,7,L1→L2,False
+CRE-0076,@creator_0076,2285,FNB,Surabaya,mukbang; cooking; food vlog,10,3611,36110,decreasing,10,mentions_prices,3,0.44,0,34,L1,6,L0→L1→L2→L1,True
+CRE-0077,@creator_0077,15147,FNB,Jakarta,cooking; food vlog; mukbang,23,19165,440795,increasing,4,has_booking_links,8,4.41,1,80,L2,6,L0→L1→L2→L3→L2,True
+CRE-0078,@creator_0078,2936,FNB,Surabaya,food vlog; street food; restaurant review,7,1220,8540,stable,21,tags_locations_only,4,0.0,0,32,L1,10,L1 (unchanged),True
+CRE-0079,@creator_0079,4423,TTD,Yogyakarta,nature; theme park; adventure,21,4028,84588,increasing,62,none,1,12.37,0,2,L1,4,L0→L1→L2→L1,False
+CRE-0080,@creator_0080,2301,FNB,Bandung,kuliner; restaurant review; cooking,29,12044,349276,increasing,3,has_affiliate_links,19,9.56,3,61,L2,5,L1→L2,False
+CRE-0081,@creator_0081,3466,FNB,Bandung,kuliner; cooking; mukbang,23,6609,152007,stable,15,tags_locations_only,8,0.53,0,73,L1,6,L1 (unchanged),False
+CRE-0082,@creator_0082,32982,FNB,Yogyakarta,food vlog; cooking; kuliner,53,18724,992372,decreasing,0,has_booking_links,13,28.65,8,80,L3,2,L0→L2→L3,False
+CRE-0083,@creator_0083,5243,FNB,Semarang,restaurant review; cooking; kuliner,22,11115,244530,increasing,16,mentions_prices,9,7.2,2,26,L1,7,L0→L1,False
+CRE-0084,@creator_0084,73980,ACC,Bali,resort vlog; luxury hotel; staycation,53,23763,1259439,increasing,0,has_affiliate_links,42,9124.74,203,69,L4,6,L1→L3→L4,False
+CRE-0085,@creator_0085,200,TTD,Yogyakarta,nature; adventure; beach,37,11961,442557,increasing,5,has_booking_links,14,132.5,5,65,L2,11,L0→L1→L2→L3→L2,False
+CRE-0086,@creator_0086,21092,ACC,Jakarta,resort vlog; staycation; villa tour,47,26370,1239390,decreasing,3,mentions_prices,38,4364.14,97,93,L3,13,L0→L2→L3,False
+CRE-0087,@creator_0087,2461,FNB,Semarang,mukbang; restaurant review; street food,21,9454,198534,decreasing,19,tags_locations_only,7,7.37,2,38,L1,13,L0→L1,False
+CRE-0088,@creator_0088,9870,TTD,Malang,beach; adventure; nature,39,8280,322920,stable,2,has_affiliate_links,5,427.0,17,53,L2,7,L0→L1→L2,True
+CRE-0089,@creator_0089,1890,FNB,Medan,kuliner; cooking; cafe review,3,1988,5964,decreasing,20,mentions_prices,5,1.2,0,42,L1,6,L0→L1,False
+CRE-0090,@creator_0090,4512,FNB,Semarang,restaurant review; kuliner; street food,2,6350,12700,stable,14,none,3,0.68,0,31,L1,13,L0→L1→L2→L1,False
+CRE-0091,@creator_0091,4858,FNB,Semarang,kuliner; street food; food vlog,45,4927,221715,increasing,2,mentions_prices,12,13.69,4,60,L2,5,L0→L2,False
+CRE-0092,@creator_0092,461,TTD,Bali,cultural tourism; wisata; nature,0,163,0,increasing,39,tags_locations_only,3,4.35,0,42,L1,10,L0→L1,False
+CRE-0093,@creator_0093,2428,ACC,Lombok,resort vlog; hotel review; hotel room tour,13,2994,38922,stable,7,tags_locations_only,6,0.0,0,49,L1,13,L1 (unchanged),True
+CRE-0094,@creator_0094,46125,ACC,Central Java,hotel review; hotel room tour; luxury hotel,39,19334,754026,increasing,2,tiktok_shop_plus_affiliates,73,13933.34,310,72,L4,5,L1→L3→L4,True
+CRE-0095,@creator_0095,9983,FNB,Bali,restaurant review; kuliner; mukbang,19,7570,143830,stable,3,tags_locations_only,17,16.96,5,34,L2,13,L1→L2,True
+CRE-0096,@creator_0096,4336,FNB,Medan,street food; cafe review; restaurant review,26,9696,252096,stable,16,tags_locations_only,9,3.72,1,39,L1,10,L0→L1,True
+CRE-0097,@creator_0097,389,ACC,Bali,villa tour; resort vlog; hotel room tour,0,7454,0,stable,93,none,9,108.92,2,62,L1,5,L1 (unchanged),True
+CRE-0098,@creator_0098,69436,FNB,Bali,restaurant review; cafe review; street food,45,19812,891540,stable,0,has_booking_links,74,210.05,60,91,L4,4,L0→L1→L2→L3→L4,False
+CRE-0099,@creator_0099,23076,FNB,Yogyakarta,restaurant review; street food; mukbang,36,16313,587268,decreasing,0,has_tiktok_shop,14,38.66,11,58,L3,1,L0→L1→L2→L3,True
+CRE-0100,@creator_0100,3305,ACC,East Java,resort vlog; staycation; villa tour,1,1567,1567,increasing,4,none,6,8.83,0,23,L1,9,L1 (unchanged),False
+CRE-0101,@creator_0101,3920,ACC,Jakarta,villa tour; resort vlog; budget hotel,41,5653,231773,stable,4,mentions_prices,5,529.07,12,61,L2,9,L0→L1→L2→L3→L2,False
+CRE-0102,@creator_0102,9533,FNB,Surabaya,restaurant review; street food; cooking,23,6168,141864,increasing,1,has_booking_links,11,4.08,1,48,L2,9,L0→L1→L2,True
+CRE-0103,@creator_0103,7249,FNB,Malang,street food; food vlog; cooking,31,3806,117986,stable,2,has_affiliate_links,19,2.96,1,72,L2,12,L0→L1→L2→L3→L2,False
+CRE-0104,@creator_0104,22711,FNB,Semarang,street food; restaurant review; cooking,45,3004,135180,stable,1,has_tiktok_shop,32,55.98,16,83,L3,10,L0→L2→L3,True
+CRE-0105,@creator_0105,55592,FNB,Semarang,street food; restaurant review; cooking,38,17539,666482,stable,0,tiktok_shop_plus_affiliates,38,316.72,90,72,L4,2,L0→L1→L2→L3→L4,False
+CRE-0106,@creator_0106,2641,TTD,Bandung,theme park; cultural tourism; nature,3,303,909,stable,1,mentions_prices,2,0.0,0,62,L1,9,L1 (unchanged),True
+CRE-0107,@creator_0107,13176,ACC,East Java,luxury hotel; budget hotel; staycation,16,25746,411936,stable,0,has_tiktok_shop,39,5145.3,114,83,L3,3,L0→L1→L2→L3,True
+CRE-0108,@creator_0108,22991,TTD,Bali,wisata; theme park; adventure,63,11837,745731,stable,2,has_affiliate_links,14,140.47,6,30,L2,7,L0→L1→L2,False
+CRE-0109,@creator_0109,50609,ACC,Yogyakarta,luxury hotel; resort vlog; staycation,38,19491,740658,stable,1,has_tiktok_shop,66,30730.23,683,75,L4,11,L0→L2→L3→L4,True
+CRE-0110,@creator_0110,898,ACC,Central Java,staycation; hotel review; resort vlog,14,2659,37226,stable,4,tags_locations_only,8,17.78,0,46,L1,13,L0→L1,False
+CRE-0111,@creator_0111,5458,ACC,Jakarta,resort vlog; hotel room tour; budget hotel,12,6654,79848,increasing,9,none,2,54.1,1,31,L1,5,L0→L1→L2→L1,True
+CRE-0112,@creator_0112,53724,FNB,Malang,food vlog; mukbang; street food,57,29719,1693983,increasing,0,tiktok_shop_plus_affiliates,53,220.15,63,63,L4,12,L0→L2→L3→L4,True
+CRE-0113,@creator_0113,3579,ACC,East Java,villa tour; hotel room tour; budget hotel,21,8518,178878,decreasing,14,mentions_prices,3,0.0,0,36,L1,9,L1 (unchanged),True
+CRE-0114,@creator_0114,4264,TTD,Surabaya,theme park; nature; hidden gems,3,4213,12639,increasing,2,none,8,0.0,0,44,L1,1,L0→L1,False
+CRE-0115,@creator_0115,35637,TTD,Surabaya,adventure; nature; beach,23,26969,620287,stable,2,has_booking_links,13,0.0,0,72,L3,7,L1→L2→L3,True
+CRE-0116,@creator_0116,45292,TTD,Jakarta,theme park; hidden gems; wisata,59,9594,566046,increasing,3,tiktok_shop_plus_affiliates,42,5761.15,230,84,L4,5,L1→L2→L3→L4,True
+CRE-0117,@creator_0117,9413,FNB,Jakarta,cafe review; kuliner; cooking,36,11775,423900,stable,7,mentions_prices,12,13.86,4,54,L2,4,L0→L1→L2→L3→L2,False
+CRE-0118,@creator_0118,2145,TTD,Surabaya,adventure; beach; hidden gems,10,3272,32720,increasing,9,none,5,5.37,0,48,L1,10,L0→L1,False
+CRE-0119,@creator_0119,4067,FNB,Medan,food vlog; restaurant review; mukbang,9,6656,59904,decreasing,4,none,8,1.01,0,40,L1,11,L0→L1,False
+CRE-0120,@creator_0120,2293,ACC,West Java,staycation; budget hotel; luxury hotel,3,4931,14793,decreasing,19,tags_locations_only,1,34.56,1,30,L1,6,L0→L1,True
+CRE-0121,@creator_0121,200,TTD,Bandung,adventure; cultural tourism; theme park,1,50,50,stable,9,tags_locations_only,7,1.68,0,32,L1,1,L1 (unchanged),False
+CRE-0122,@creator_0122,3003,TTD,Yogyakarta,adventure; beach; cultural tourism,1,4460,4460,increasing,4,none,1,4.18,0,52,L1,2,L0→L1,False
+CRE-0123,@creator_0123,5394,ACC,West Java,hotel room tour; resort vlog; staycation,0,2425,0,decreasing,88,none,3,13.49,0,16,L1,7,L0→L1→L2→L1,True
+CRE-0124,@creator_0124,2761,ACC,East Java,luxury hotel; staycation; hotel review,13,4822,62686,decreasing,110,none,4,35.68,1,36,L1,11,L0→L1,True
+CRE-0125,@creator_0125,2086,ACC,Central Java,hotel review; hotel room tour; budget hotel,12,3925,47100,decreasing,119,mentions_prices,7,8.66,0,64,L1,11,L0→L1,True
+CRE-0126,@creator_0126,2632,FNB,Medan,restaurant review; cooking; mukbang,1,1336,1336,stable,20,tags_locations_only,1,0.03,0,63,L1,5,L0→L1,False
+CRE-0127,@creator_0127,1803,ACC,West Java,resort vlog; budget hotel; luxury hotel,15,1146,17190,increasing,1,none,2,60.24,1,36,L1,2,L0→L1→L2→L1,False
+CRE-0128,@creator_0128,3554,TTD,Jakarta,nature; cultural tourism; hidden gems,12,3715,44580,increasing,12,none,9,2.93,0,44,L1,4,L0→L1,False
+CRE-0129,@creator_0129,4127,ACC,Central Java,villa tour; staycation; resort vlog,46,11419,525274,stable,0,has_affiliate_links,13,738.77,16,59,L2,6,L0→L2,False
+CRE-0130,@creator_0130,3914,ACC,East Java,hotel review; hotel room tour; luxury hotel,0,3771,0,stable,79,tags_locations_only,6,77.88,2,45,L1,11,L0→L1,False
+CRE-0131,@creator_0131,2427,FNB,Bandung,restaurant review; cooking; kuliner,18,9609,172962,increasing,12,mentions_prices,1,4.3,1,56,L1,3,L0→L1,False
+CRE-0132,@creator_0132,2370,TTD,Bali,theme park; beach; hidden gems,18,5259,94662,decreasing,9,none,8,23.01,1,48,L1,10,L0→L1,False
+CRE-0133,@creator_0133,860,FNB,Malang,cafe review; restaurant review; street food,40,8128,325120,increasing,71,tags_locations_only,10,7.09,2,50,L1,2,L0→L1→L2→L1,True
+CRE-0134,@creator_0134,1836,ACC,Central Java,staycation; luxury hotel; budget hotel,6,4743,28458,stable,6,tags_locations_only,10,14.19,0,66,L1,12,L1 (unchanged),True
+CRE-0135,@creator_0135,12084,TTD,Bali,cultural tourism; nature; beach,41,2790,114390,stable,3,has_booking_links,13,336.6,13,61,L2,8,L0→L1→L2,True
+CRE-0136,@creator_0136,62057,FNB,Yogyakarta,mukbang; cooking; street food,33,4018,132594,decreasing,0,has_affiliate_links,26,217.27,62,71,L4,9,L1→L2→L3→L4,True
+CRE-0137,@creator_0137,9407,FNB,Yogyakarta,restaurant review; cooking; food vlog,24,16217,389208,decreasing,3,mentions_prices,19,9.82,3,59,L2,13,L1→L2,False
+CRE-0138,@creator_0138,2270,TTD,Yogyakarta,nature; wisata; beach,26,8347,217022,decreasing,16,tags_locations_only,8,26.33,1,26,L1,2,L0→L1,False
+CRE-0139,@creator_0139,200,ACC,Bali,hotel room tour; villa tour; staycation,1,1001,1001,stable,13,mentions_prices,8,12.13,0,39,L1,13,L0→L1,True
+CRE-0140,@creator_0140,7048,FNB,Bali,street food; cafe review; restaurant review,20,6678,133560,decreasing,1,mentions_prices,10,6.03,2,45,L2,8,L1→L2,True
+CRE-0141,@creator_0141,11063,FNB,Medan,kuliner; cafe review; street food,25,12572,314300,decreasing,1,tags_locations_only,9,11.26,3,46,L2,10,L1→L2,True
+CRE-0142,@creator_0142,200,ACC,Yogyakarta,resort vlog; villa tour; budget hotel,14,1744,24416,increasing,9,none,3,70.48,2,32,L1,7,L0→L1,True
+CRE-0143,@creator_0143,599,ACC,West Java,resort vlog; staycation; budget hotel,3,4200,12600,increasing,58,none,5,32.46,1,49,L1,4,L0→L1,False
+CRE-0144,@creator_0144,22894,FNB,Malang,food vlog; cafe review; restaurant review,30,10194,305820,decreasing,0,has_tiktok_shop,34,46.52,13,87,L3,9,L0→L2→L3,True
+CRE-0145,@creator_0145,10267,FNB,Semarang,mukbang; restaurant review; cafe review,32,19725,631200,stable,2,has_booking_links,37,61.26,18,92,L3,1,L1→L2→L3→L4→L3,False
+CRE-0146,@creator_0146,12126,TTD,Jakarta,cultural tourism; wisata; hidden gems,44,15115,665060,stable,2,has_tiktok_shop,40,1442.88,58,73,L3,10,L1→L2→L3→L4→L3,False
+CRE-0147,@creator_0147,48648,TTD,Bandung,cultural tourism; nature; beach,66,26608,1756128,decreasing,1,mentions_prices,28,1051.92,42,83,L3,11,L0→L1→L3,True
+CRE-0148,@creator_0148,12420,TTD,Jakarta,cultural tourism; beach; theme park,16,6785,108560,stable,0,has_affiliate_links,7,171.08,7,49,L2,7,L0→L2,False
+CRE-0149,@creator_0149,43466,FNB,Yogyakarta,kuliner; cooking; cafe review,32,18176,581632,increasing,0,has_tiktok_shop,13,41.61,12,88,L3,4,L0→L2→L3,True
+CRE-0150,@creator_0150,3132,TTD,Bali,nature; cultural tourism; theme park,24,2670,64080,decreasing,115,tags_locations_only,3,37.86,2,35,L1,12,L0→L1,False
+CRE-0151,@creator_0151,34469,FNB,Bandung,mukbang; cafe review; restaurant review,54,20341,1098414,stable,0,has_affiliate_links,37,82.16,23,64,L3,12,L0→L2→L3,True
+CRE-0152,@creator_0152,2521,FNB,Bandung,mukbang; cafe review; restaurant review,11,7106,78166,stable,102,none,1,1.42,0,32,L1,2,L1 (unchanged),False
+CRE-0153,@creator_0153,200,FNB,Yogyakarta,food vlog; cooking; mukbang,16,4896,78336,stable,20,tags_locations_only,2,0.7,0,11,L1,10,L0→L1,False
+CRE-0154,@creator_0154,259,TTD,Jakarta,adventure; wisata; beach,26,3035,78910,decreasing,7,none,8,9.87,0,54,L1,11,L0→L1→L2→L1,False
+CRE-0155,@creator_0155,4497,FNB,Medan,cooking; restaurant review; food vlog,4,5799,23196,stable,57,mentions_prices,1,0.98,0,46,L1,3,L0→L1,False
+CRE-0156,@creator_0156,5202,FNB,Yogyakarta,food vlog; street food; restaurant review,34,5323,180982,stable,1,mentions_prices,11,11.78,3,53,L2,12,L0→L1→L2,False
+CRE-0157,@creator_0157,20742,FNB,Bandung,kuliner; cooking; cafe review,37,8792,325304,decreasing,0,mentions_prices,19,54.51,16,84,L3,5,L1→L2→L3,False
+CRE-0158,@creator_0158,2807,TTD,Malang,wisata; theme park; adventure,17,4949,84133,stable,13,none,5,20.12,1,28,L1,9,L1 (unchanged),False
+CRE-0159,@creator_0159,654,FNB,Jakarta,restaurant review; street food; cooking,2,1519,3038,stable,0,none,4,0.24,0,58,L1,8,L0→L1,False
+CRE-0160,@creator_0160,2549,TTD,Jakarta,adventure; cultural tourism; wisata,21,3304,69384,decreasing,18,tags_locations_only,6,7.6,0,73,L1,9,L0→L1,True
+CRE-0161,@creator_0161,12201,TTD,Yogyakarta,cultural tourism; adventure; hidden gems,67,9600,643200,stable,2,has_tiktok_shop,28,1126.24,45,84,L3,2,L0→L1→L3,True
+CRE-0162,@creator_0162,1270,FNB,Bali,mukbang; street food; kuliner,17,4309,73253,stable,0,tags_locations_only,7,0.75,0,46,L1,12,L0→L1→L2→L1,True
+CRE-0163,@creator_0163,39488,FNB,Jakarta,food vlog; cafe review; restaurant review,53,18567,984051,stable,0,has_affiliate_links,57,438.04,125,68,L4,3,L0→L1→L2→L3→L4,True
+CRE-0164,@creator_0164,3375,FNB,Surabaya,kuliner; cafe review; cooking,11,6533,71863,decreasing,6,tags_locations_only,3,0.44,0,28,L1,4,L1 (unchanged),True
+CRE-0165,@creator_0165,5046,FNB,Medan,mukbang; cafe review; street food,12,5558,66696,stable,10,none,3,1.15,0,51,L1,13,L0→L1,False
+CRE-0166,@creator_0166,2482,ACC,Lombok,hotel review; staycation; luxury hotel,16,5285,84560,stable,4,tags_locations_only,2,524.03,12,29,L1,3,L0→L1,True
+CRE-0167,@creator_0167,5228,FNB,Bandung,food vlog; restaurant review; mukbang,37,8186,302882,stable,89,tags_locations_only,1,0.95,0,42,L1,10,L0→L1,False
+CRE-0168,@creator_0168,411,FNB,Medan,kuliner; street food; restaurant review,9,2963,26667,decreasing,17,none,8,0.79,0,26,L1,4,L0→L1,True
+CRE-0169,@creator_0169,651,TTD,Malang,theme park; adventure; hidden gems,19,50,950,increasing,8,mentions_prices,3,16.96,1,23,L1,4,L0→L1,True
+CRE-0170,@creator_0170,65521,ACC,Lombok,hotel room tour; luxury hotel; hotel review,40,7936,317440,stable,1,has_affiliate_links,18,2872.44,64,75,L3,8,L1→L2→L3→L4→L3,False
+CRE-0171,@creator_0171,106077,FNB,Yogyakarta,food vlog; cooking; cafe review,98,12213,1196874,decreasing,0,has_affiliate_links,65,265.69,76,75,L4,6,L0→L1→L2→L4,True
+CRE-0172,@creator_0172,2976,TTD,Yogyakarta,cultural tourism; hidden gems; theme park,24,5834,140016,decreasing,6,none,3,19.39,1,58,L1,9,L0→L1,True
+CRE-0173,@creator_0173,3875,FNB,Surabaya,restaurant review; mukbang; street food,21,7530,158130,decreasing,5,tags_locations_only,7,9.53,3,30,L1,13,L0→L1→L2→L1,True
+CRE-0174,@creator_0174,33001,FNB,Medan,mukbang; food vlog; restaurant review,38,14568,553584,increasing,1,has_affiliate_links,66,50.45,14,89,L4,4,L0→L1→L2→L3→L4,False
+CRE-0175,@creator_0175,11196,FNB,Surabaya,cafe review; mukbang; kuliner,34,27927,949518,increasing,1,has_tiktok_shop,21,18.4,5,84,L3,10,L0→L1→L3,False
+CRE-0176,@creator_0176,6377,FNB,Medan,mukbang; restaurant review; cafe review,43,12737,547691,increasing,0,mentions_prices,17,8.52,2,42,L2,8,L0→L2,False
+CRE-0177,@creator_0177,4665,FNB,Yogyakarta,cafe review; restaurant review; cooking,1,2316,2316,decreasing,3,none,2,0.78,0,41,L1,2,L0→L1,False
+CRE-0178,@creator_0178,3623,TTD,Jakarta,nature; cultural tourism; adventure,11,3676,40436,stable,72,tags_locations_only,4,15.03,1,37,L1,6,L0→L1,False
+CRE-0179,@creator_0179,3829,ACC,Jakarta,hotel review; hotel room tour; staycation,34,11272,383248,increasing,4,has_affiliate_links,20,77.2,2,63,L2,5,L0→L1→L2,True
+CRE-0180,@creator_0180,4607,ACC,Lombok,hotel review; resort vlog; villa tour,19,631,11989,decreasing,11,none,3,53.03,1,50,L1,2,L1 (unchanged),False
+CRE-0181,@creator_0181,1132,ACC,Bali,staycation; villa tour; resort vlog,19,5477,104063,increasing,17,tags_locations_only,8,0.0,0,24,L1,3,L1 (unchanged),True
+CRE-0182,@creator_0182,102965,FNB,Surabaya,kuliner; mukbang; restaurant review,45,30295,1363275,increasing,1,tiktok_shop_plus_affiliates,22,189.4,54,78,L4,2,L0→L2→L3→L4,True
+CRE-0183,@creator_0183,19010,ACC,East Java,hotel room tour; luxury hotel; budget hotel,35,26756,936460,decreasing,3,has_tiktok_shop,39,3800.89,84,63,L3,5,L0→L1→L2→L3,True
+CRE-0184,@creator_0184,31725,ACC,West Java,hotel room tour; budget hotel; resort vlog,38,10752,408576,decreasing,0,has_affiliate_links,35,2425.66,54,74,L3,3,L0→L1→L3,False
+CRE-0185,@creator_0185,3662,FNB,Malang,cooking; street food; mukbang,4,1744,6976,decreasing,11,none,1,0.23,0,57,L1,1,L0→L1,False
+CRE-0186,@creator_0186,3227,FNB,Bandung,cooking; restaurant review; mukbang,19,11204,212876,increasing,6,tags_locations_only,8,5.11,1,29,L1,4,L0→L1,False
+CRE-0187,@creator_0187,24654,TTD,Malang,beach; wisata; hidden gems,52,22356,1162512,stable,1,has_affiliate_links,38,726.32,29,87,L3,13,L1→L2→L3,True
+CRE-0188,@creator_0188,1876,FNB,Bali,food vlog; cooking; street food,0,50,0,increasing,87,tags_locations_only,3,1.45,0,30,L1,5,L1 (unchanged),False
+CRE-0189,@creator_0189,34029,ACC,Lombok,budget hotel; hotel review; luxury hotel,48,18761,900528,stable,1,has_booking_links,18,7232.85,161,76,L3,12,L0→L2→L3,True
+CRE-0190,@creator_0190,2095,ACC,Lombok,luxury hotel; budget hotel; hotel room tour,7,7998,55986,decreasing,6,tags_locations_only,8,26.86,1,28,L1,1,L0→L1,False
+CRE-0191,@creator_0191,4830,FNB,Medan,cooking; food vlog; restaurant review,11,5441,59851,decreasing,16,tags_locations_only,4,2.22,1,21,L1,9,L0→L1,False
+CRE-0192,@creator_0192,6976,FNB,Malang,mukbang; restaurant review; street food,16,9753,156048,increasing,5,mentions_prices,12,12.68,4,58,L2,5,L0→L1→L2→L3→L2,False
+CRE-0193,@creator_0193,930,TTD,Malang,cultural tourism; theme park; nature,40,24514,980560,increasing,1,has_tiktok_shop,21,995.0,40,54,L3,3,L1→L2→L3,False
+CRE-0194,@creator_0194,3222,ACC,Jakarta,resort vlog; villa tour; hotel review,6,6510,39060,increasing,117,none,7,9.59,0,38,L1,8,L1 (unchanged),False
+CRE-0195,@creator_0195,1540,TTD,Bandung,hidden gems; beach; adventure,17,4184,71128,decreasing,0,none,8,19.61,1,52,L1,7,L0→L1,False
+CRE-0196,@creator_0196,2088,FNB,Bandung,kuliner; mukbang; cooking,16,50,800,decreasing,10,none,9,1.51,0,43,L1,3,L0→L1,False
+CRE-0197,@creator_0197,5732,FNB,Medan,cafe review; street food; restaurant review,20,10672,213440,increasing,10,none,7,8.2,2,36,L1,5,L0→L1→L2→L1,False
+CRE-0198,@creator_0198,1471,TTD,Yogyakarta,adventure; wisata; beach,19,7063,134197,stable,20,tags_locations_only,5,29.04,1,35,L1,1,L1 (unchanged),False
+CRE-0199,@creator_0199,12302,FNB,Jakarta,street food; food vlog; mukbang,29,6140,178060,stable,6,mentions_prices,8,4.46,1,46,L2,1,L0→L1→L2→L3→L2,False
+CRE-0200,@creator_0200,200,TTD,Malang,wisata; adventure; nature,13,4936,64168,stable,13,mentions_prices,5,0.95,0,24,L1,12,L0→L1,False

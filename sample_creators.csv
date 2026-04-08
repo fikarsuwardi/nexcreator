@@ -1,0 +1,13 @@
+tiktok_handle,display_name,vertical,region,follower_count,total_views,avg_views_per_video,videos_per_month,last_posted_at,has_tiktok_shop,has_affiliate_links,has_booking_links,recent_avg_views,older_avg_views,bio_text
+foodie_jakarta,Rania Putri,FNB,Jakarta,125000,4800000,22000,48,2026-04-06T10:00:00Z,true,true,false,28000,18000,Kuliner Jakarta | Food reviews | Best hidden gems
+bali_wanderer,Dimas Satria,TTD,Bali,89000,2100000,14000,32,2026-04-05T14:00:00Z,false,true,true,16000,12000,Bali travel & activities | Hidden waterfalls | Best spots
+hotel_vibes_id,Siti Rahma,ACC,Surabaya,210000,9500000,35000,55,2026-04-07T08:00:00Z,true,true,true,42000,30000,Hotel & staycation reviews Indonesia | Luxury & budget
+jakarta_eats,Budi Santoso,FNB,Jakarta,45000,980000,8500,22,2026-04-03T16:00:00Z,false,false,false,9000,8000,Jajan murah di Jakarta | Street food hunter
+explore_bandung,Maya Kusuma,TTD,Bandung,67000,1450000,11000,28,2026-03-28T11:00:00Z,false,false,false,10000,12000,Bandung attractions & cafe hunting
+surabaya_food,Rizky Pratama,FNB,Surabaya,155000,6200000,28000,42,2026-04-06T09:00:00Z,true,false,false,32000,24000,Surabaya culinary scene | FnB reviews | Honest ratings
+bali_resort_life,Anisa Dewi,ACC,Bali,320000,14000000,48000,62,2026-04-07T12:00:00Z,true,true,true,55000,40000,Bali resort & villa reviews | Luxury travel | Booking tips
+medan_hidden_gems,Fajar Nugroho,FNB,Medan,28000,520000,5200,18,2026-04-01T10:00:00Z,false,false,false,5000,5500,Kuliner Medan | Warung tersembunyi | Makanan khas
+yogya_temple_tour,Wulan Sari,TTD,Yogyakarta,92000,3400000,18000,38,2026-04-05T15:00:00Z,false,true,true,22000,15000,Jogja culture & temples | Prambanan | Keraton tours
+jakarta_luxury_stay,Kevin Halim,ACC,Jakarta,178000,7800000,31000,44,2026-04-06T13:00:00Z,true,true,false,36000,28000,Jakarta hotel reviews | Business travel | 5-star stays
+makassar_seafood,Rina Hapsari,FNB,Makassar,38000,750000,6500,25,2026-03-31T09:00:00Z,false,false,false,6000,7000,Seafood Makassar | Coto makassar | Kuliner khas Sulawesi
+lombok_adventures,Hendra Wijaya,TTD,Lombok,71000,2800000,21000,35,2026-04-04T11:00:00Z,false,true,true,25000,18000,Lombok hiking & beaches | Rinjani | Senggigi vibes
